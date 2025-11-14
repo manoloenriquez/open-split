@@ -1,0 +1,22 @@
+export interface Group {
+  id: string;
+  name: string;
+  description?: string;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface GroupMember {
+  id: string;
+  group_id: string;
+  user_id: string;
+  role: "admin" | "member";
+  joined_at: string;
+}
+
+export interface GroupWithMembers extends Group {
+  members: GroupMember[];
+  member_count: number;
+}
+
